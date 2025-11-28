@@ -1,0 +1,48 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+.cuadrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.caja-login {
+    width: 50vw;
+    max-width: 450px;
+    padding: 25px;
+    background-color: #ADD8E6;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.campo {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.caja-login button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+boton_inicio{
+    position: absolute;
+    top: 10px;
+    right: 10px;}

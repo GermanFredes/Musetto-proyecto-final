@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku en JavaScript</title>
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+    <h1>Sudoku</h1>
+    
+    <div id="sudoku-grid"></div>
+    
+    <div class="controls">
+        <button onclick="generarSudoku()">Nuevo Juego</button>
+        <button onclick="comprobarSudoku()">Comprobar</button>
+        <button onclick="resolverSudoku()">Resolver</button>
+        <button onclick="resetearSudoku()">Reiniciar Actual</button>
+    </div>
+    
+    <p id="mensaje"></p>
+
+    <script src="juego.js"></script>
+</body>
+</html>

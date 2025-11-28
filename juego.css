@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+/* Estructura principal del tablero 9x9 */
+#sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-template-rows: repeat(9, 40px);
+    border: 2px solid #333;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Estilos para cada celda individual */
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bbb;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+/* Estilos para el input dentro de la celda */
+.cell input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    background-color: transparent;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ESTILOS PARA RESALTAR LOS BLOQUES 3x3 --- */
+
+/* Borde vertical derecho grueso para las columnas 3, 6, 9 */
+.cell:nth-child(3n) { border-right: 2px solid #333; }
+.cell:nth-child(9n+1) { border-left: 2px solid #333; } /* Borde izquierdo de la primera columna */
+
+/* Borde inferior grueso para las filas 3 y 6 */
+#sudoku-grid > div:nth-child(n+19):nth-child(-n+27),
+#sudoku-grid > div:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #333;
+}
+
+/* Borde superior de la primera fila */
+#sudoku-grid > div:nth-child(n+1):nth-child(-n+9) { border-top: 2px solid #333; } 
+/* Borde inferior de la última fila */
+#sudoku-grid > div:nth-child(n+73):nth-child(-n+81) { border-bottom: 2px solid #333; } 
+
+
+/* --- ESTILOS DE JUEGO --- */
+
+/* Celdas con números fijos (iniciales) */
+.fixed {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* Valores que el usuario ingresa */
+.user-input {
+    color: #007bff;
+}
+
+/* Estilo para resaltar celdas incorrectas al comprobar */
+.incorrect {
+    background-color: #ffdddd !important;
+    color: #d9534f !important;
+}
+
+/* --- ESTILOS DE BOTONES Y MENSAJES --- */
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+#mensaje {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    min-height: 20px; 
+}
